@@ -43,7 +43,7 @@ char str[MAX_LOG_LENGTH];
 int main()
 {
 	if(!IsCurrentlyInGitRepo())
-		return 0;
+		return 1;
 	strcpy(str, "#if defined _INC_SAMP_GIT_LOG\n");
 	strcat(str, "	#endinput\n");
 	strcat(str, "#endif\n\n");
@@ -84,7 +84,7 @@ int AppendGitLogToString(char *target)
 	free(tempstr);
 	
 	pclose(log);
-	return 1;
+	return 0;
 }
 
 int IsCurrentlyInGitRepo()
@@ -102,7 +102,7 @@ int AppendCurrentTimeToString(char *target)
 	time ( &rawtime );
 	timeinfo = localtime ( &rawtime );
 	strcat(str, asctime (timeinfo));
-	return 1;
+	return 0;
 }
 
 int store_data(const char *filepath, const char *data)
@@ -112,7 +112,7 @@ int store_data(const char *filepath, const char *data)
 	{
 		fputs(data, fp);
 		fclose(fp);
-		return 1;
+		return 0;
 	}
 	return 0;
 }

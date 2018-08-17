@@ -7,12 +7,13 @@
 SHELL= /bin/bash
 CC= gcc
 CFLAGS=
+PROJNAME= samp-git-log
 
-all: samp-git-log.c
-		$(CC) $(CFLAGS) samp-git-log.c -o samp-git-log
+all: $(PROJNAME).c
+		$(CC) $(CFLAGS) $(PROJNAME).c -o $(PROJNAME)
 
 install: all
 		@echo are you kidding'??'
 
 clean:
-		rm git-hash
+		rm $(PROJNAME)

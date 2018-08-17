@@ -1,0 +1,63 @@
+samp-git-log
+
+Copyright (c) 2018, Jeroen de Neef, <jeroen@jeroendeneef.com>
+All rights reserved
+
+DESCRIPTION
+-----------
+
+I was looking for a way to automatically include and define the last 16 git logs of a project before compiling.
+
+OVERVIEW
+--------
+
+samp-git-log includes:
+
+samp-git-log:
+	The binary that generates the include for Pawn.
+	
+DEPENDENCIES
+------------
+
+This project has dependencies, make sure that you meet them.
+	Git 1.7.9.3
+	
+BINARIES
+--------
+
+There are compiled binaries available for Windows operating systems.
+It is very easy to compile this for Linux, but there is no official SA:MP Pawn compiler for Linux.
+
+INSTALLATION
+------------
+
+Compile:
+	samp-git-log.c
+		Using GCC: gcc samp-git-log.c -o samp-git-log
+		Using Makefile: make
+		
+Alternative:
+	It is possible to install the program on CentOS 6 and 7 using the RPM packages below or after configuring YUM with the repository below. The program can be accessed after installing using 'samp-git-log'.
+
+RPM package
+-----------
+
+There are RPM packages available, these have been built on CentOS 6 and 7.
+CentOS 6: n/a
+CentOS 7: n/a
+
+YUM repository
+--------------
+
+To install 'samp-git-log', you need to configure YUM with my repository, to add my YUM repository you need to use the following Shell script: 'curl -o /etc/yum.repos.d/jeroendeneef.repo https://rpm.jeroendeneef.com/jeroendeneef/CentOS/jeroendeneef.repo'.
+This program is available in the repository under 'samp-git-log'.
+
+SUPPORT
+-------
+
+Create an issue at <https://github.com/Jeroen52/samp-git-log> if you need any help.
+
+HOW TO CONTRIBUTE
+-----------------
+
+Fork this repository and make a pull request when done.

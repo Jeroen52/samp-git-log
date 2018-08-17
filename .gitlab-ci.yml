@@ -1,0 +1,26 @@
+image: centos-development-tools-with-git:7
+   
+
+stages:
+- test
+- build
+
+test:linux:
+    stage: test
+    script: make && make clean
+    tags:
+    - linux
+    - git
+
+build:linux:
+    stage: build
+    script: make
+    dependencies:
+    - test:linux
+    tags:
+    - linux
+    - git
+    artifacts:
+        paths:
+        - samp-git-log
+        expire_in: 1 month

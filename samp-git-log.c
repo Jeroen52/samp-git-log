@@ -21,9 +21,9 @@
 //#define DEBUG
 
 #define MAX_LOG_LINES 22
-#define MAX_LOG_LINE_LENGTH 173
+#define MAX_LOG_LINE_LENGTH 178
 #define MAX_LOG_LENGTH (MAX_LOG_LINES*MAX_LOG_LINE_LENGTH)
-#define MAX_INCLUDE_LENGTH (244+MAX_LOG_LENGTH)
+#define MAX_INCLUDE_LENGTH (262+MAX_LOG_LENGTH)
 
 #define GIT_LOG_COMMAND "git log --no-merges --pretty=format:'\\n%<(8,trunc)%aN\\t%ad\\t%<(128,trunc)%s\\' --abbrev-commit HEAD^^^^^^^^^^^^..HEAD"
 

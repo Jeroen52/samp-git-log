@@ -65,11 +65,11 @@ int main()
 
 void replace(char * input, char find, char replace)
 {
-	while(input != '\0')
+	while(*input != '\0')
 	{
-		if(input == find)
+		if(*input == find)
 		{
-			input = replace;
+			*input = replace;
 		}
 		
 		input++;

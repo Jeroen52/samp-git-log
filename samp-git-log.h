@@ -21,3 +21,4 @@ int AppendGitLogToString(char *target);
 int IsCurrentlyInGitRepo();
 int AppendCurrentTimeToString(char *target);
 int store_data(const char *filepath, const char *data);
+void replace(char * input, char find, char replace);

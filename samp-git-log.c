@@ -87,8 +87,8 @@ int AppendGitLogToString(char *target)
 		strcat(tempstr, buf);
 	}
 	
-	tempstr = replace(tempstr, "'", "`");
-	tempstr = replace(tempstr, "\"", "`");
+	replace(tempstr, '\'', '`');
+	replace(tempstr, '\"', '`');
 	
 	strcat(target, tempstr);
 	

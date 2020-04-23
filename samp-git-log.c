@@ -16,8 +16,6 @@
 
 #include "samp-git-log.h"
 
-#include "lib/replace.c"
-
 //#define DEBUG
 
 #define MAX_LOG_LINES 22
@@ -65,6 +63,19 @@ int main()
 	#endif
 }
 
+void replace(char * input, char find, char replace)
+{
+	while(*input != '\0')
+	{
+		if(*input == find)
+		{
+			*input = replace;
+		}
+		
+		input++;
+	}
+}
+
 int AppendGitLogToString(char *target)
 {
 	FILE *log = popen(GIT_LOG_COMMAND, "r");
@@ -76,8 +87,8 @@ int AppendGitLogToString(char *target)
 		strcat(tempstr, buf);
 	}
 	
-	tempstr = replace(tempstr, "'", "`", NULL);
-	tempstr = replace(tempstr, "\"", "`", NULL);
+	replace(tempstr, '\'', '`');
+	replace(tempstr, '\"', '`');
 	
 	strcat(target, tempstr);
 	

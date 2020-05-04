@@ -13,7 +13,7 @@ all: $(PROJNAME).c
 		$(CC) $(CFLAGS) $(PROJNAME).c -o $(PROJNAME)
 
 debug: $(PROJNAME).c
-		$(CC) $(CFLAGS) -g -O0 $(PROJNAME).c -o $(PROJNAME)
+		$(CC) $(CFLAGS) -Wall -g -O0 $(PROJNAME).c -o $(PROJNAME)
 
 install: all
 		@echo are you kidding'??'
